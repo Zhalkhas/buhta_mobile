@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class TitleCard extends StatelessWidget {
   final String title;
@@ -21,7 +20,6 @@ class TitleCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-
         height: size.height * 0.2,
         decoration: BoxDecoration(
           color: color,
@@ -39,10 +37,10 @@ class TitleCard extends StatelessWidget {
             title: Text(
               title,
               textAlign: TextAlign.end,
-              style: GoogleFonts.openSans(
-                color: Colors.white,
-                textStyle: Theme.of(context).textTheme.headline3,
-              ),
+              style: Theme.of(context)
+                  .textTheme
+                  .headline3
+                  .copyWith(color: Colors.white),
             ),
           ),
         ),
