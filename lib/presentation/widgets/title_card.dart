@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 
+/// Card for showing document types on main page
 class TitleCard extends StatelessWidget {
+  ///
   final String title;
+
+  ///
   final Color color;
+
+  ///
   final VoidCallback onTap;
+
+  ///
   final IconData leadingIcon;
 
+  ///
   const TitleCard({
     Key key,
     @required this.title,
@@ -20,7 +29,7 @@ class TitleCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        height: size.height * 0.2,
+        height: size.height * 0.25,
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.zero,

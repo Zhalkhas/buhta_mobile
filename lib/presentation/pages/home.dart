@@ -1,12 +1,11 @@
-import 'package:buhta/presentation/pages/bills.dart';
-import 'package:buhta/presentation/pages/products.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
-import 'package:fluttericon/fontelico_icons.dart';
 
 import '../widgets/title_card.dart';
+import 'bills.dart';
+import 'products.dart';
 
-///Widget containing all
+/// Home tab of the application
 class HomePage extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _HomePageState();
@@ -23,7 +22,7 @@ class _HomePageState extends State<HomePage> {
             TitleCard(
               title: 'Товары и услуги',
               color: Colors.red,
-              leadingIcon: Fontelico.emo_angry,
+              leadingIcon: FontAwesome5.list_ul,
               onTap: () => Navigator.of(context).push(
                 MaterialPageRoute(
                   builder: (context) => ProductsListPage(),
@@ -33,7 +32,7 @@ class _HomePageState extends State<HomePage> {
             TitleCard(
               title: 'Счета на оплату',
               color: Color.fromRGBO(0, 0xc2, 0xe2, 1),
-              leadingIcon: FontAwesome5.money_bill,
+              leadingIcon: FontAwesome5.file_invoice_dollar,
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => BillsListPage(),
               )),
