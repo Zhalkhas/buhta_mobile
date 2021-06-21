@@ -1,9 +1,14 @@
 part of 'list_cubit.dart';
 
+///
 enum ListStatus { loading, success, failure }
 
+/// State of [ListCubit]
 class ListState<T> extends Equatable {
+  /// Status of List
   final ListStatus status;
+
+  /// Items which should be rendered on UI
   final List<T> items;
 
   const ListState._({
@@ -11,18 +16,18 @@ class ListState<T> extends Equatable {
     this.items = const [],
   });
 
+  /// Loading [items]
   const ListState.loading() : this._();
 
+  /// [items] are loaded without errors
   const ListState.success(List<T> items)
       : this._(
           status: ListStatus.success,
           items: items,
         );
 
-  const ListState.failure()
-      : this._(
-          status: ListStatus.failure,
-        );
+  /// Error happened during [items] load
+  const ListState.failure() : this._(status: ListStatus.failure);
 
   @override
   List<Object> get props => [status, items];
