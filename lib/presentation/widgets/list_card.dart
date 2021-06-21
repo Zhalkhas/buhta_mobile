@@ -1,14 +1,31 @@
 import 'package:flutter/material.dart';
 
+/// Card which shows [Bill] or [Product] in list
 class ListCard extends StatelessWidget {
+  ///
   final String title;
+
+  ///
   final String subtitle;
+
+  ///
   final String subscript;
+
+  ///
   final VoidCallback onTap;
 
-  const ListCard(
-      {Key key, this.title, this.subtitle, this.subscript, this.onTap})
-      : super(key: key);
+  ///
+  final Color color;
+
+  ///
+  const ListCard({
+    Key key,
+    this.title,
+    this.subtitle,
+    this.subscript,
+    this.onTap,
+    this.color = Colors.red,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +34,7 @@ class ListCard extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Card(
-          color: Colors.red,
+          color: color,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
           child: Column(
             mainAxisSize: MainAxisSize.max,
