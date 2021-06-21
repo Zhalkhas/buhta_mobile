@@ -1,7 +1,8 @@
 import 'dart:io';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
+/// Widget which builds depending on detected platform
 abstract class PlatformWidget<Android extends Widget, iOS extends Widget>
     extends StatelessWidget {
   @override
@@ -15,7 +16,9 @@ abstract class PlatformWidget<Android extends Widget, iOS extends Widget>
     }
   }
 
+  /// Builds Android specific widget
   Android buildAndroid(BuildContext context);
 
+  /// Builds iOS specific widget
   iOS buildIOS(BuildContext context);
 }

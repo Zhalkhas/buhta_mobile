@@ -3,13 +3,25 @@ import 'package:flutter/material.dart';
 
 import 'platform_widget.dart';
 
+/// Creates Material [Scaffold] or [CupertinoPageScaffold] with
+/// [AppBar] or [CupertinoNavigationBar] depending on platform
 class PlatformScaffold extends PlatformWidget<Scaffold, CupertinoPageScaffold> {
+  /// Body widget of scaffold
   final Widget child;
+
+  /// Title of scaffold's appbar
   final String title;
+
+  /// Text label of appbar's action
   final String actionLabel;
+
+  /// Icon of appbar's action
   final IconData actionIcon;
+
+  /// Callback for action click
   final VoidCallback onTapAction;
 
+  ///
   PlatformScaffold({
     @required this.child,
     @required this.title,
@@ -62,9 +74,9 @@ class PlatformScaffold extends PlatformWidget<Scaffold, CupertinoPageScaffold> {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         middle: Text(title),
-        trailing: IconButton(
-          icon: Icon(Icons.add),
-          onPressed: () {},
+        trailing: TextButton(
+          onPressed: onTapAction,
+          child: Text(actionLabel),
         ),
       ),
       child: child,
